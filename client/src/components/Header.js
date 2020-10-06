@@ -2,7 +2,7 @@ import React from "react";
 
 const Header = () => {
 	return (
-		<div className="ui three item stackable tabs menu">
+		<div className="ui three item unstackable tabs menu">
 			<a className="item active" data-tab="Home">
 				Home
 			</a>
