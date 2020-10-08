@@ -9,9 +9,9 @@ const TopicContainer = (props) => {
 				<div className="active item">{props.topic}</div>
 			</div>
 			<div className="ui bottom attached active tab segment">
-				<PostTitle postTitle="This is a Post" />
-				<PostTitle postTitle="This is a also a Post" />
-				<PostTitle postTitle="You guessed it, a POST!" />
+				{props.titles.map((title) => (
+					<PostTitle postTitle={title} />
+				))}
 			</div>
 		</React.Fragment>
 	);
