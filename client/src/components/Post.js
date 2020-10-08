@@ -4,7 +4,7 @@ import PostHeader from "./PostHeader";
 
 const Post = (props) => {
 	return (
-		<div class="ui segment">
+		<div className="ui segment">
 			<PostHeader title="This is a Post" author="Naruto" />
 			<p>Lorem Ipssfjhcgdv dfugsd dsfygdsf dfsiuyg</p>
 		</div>
