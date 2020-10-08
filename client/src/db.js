@@ -10,12 +10,25 @@ export const getTitles = () => {
 			.get()
 			.then((snapshot) => {
 				snapshot.docs.map((doc) => {
-					titles.push(doc.data().title);
+					titles.push({
+						title: doc.data().title,
+						postId: doc.data().postid,
+					});
 				});
 				resolve(titles);
 			})
 			.catch((err) => {
 				reject(err);
 			});
+	});
+};
+
+export const getPost = (id) => {
+	return new Promise((resolve, reject) => {
+		db.collection("Posts")
+			.doc(id)
+			.get()
+			.then((doc) => resolve(doc.data()))
+			.catch((err) => reject(err));
 	});
 };
