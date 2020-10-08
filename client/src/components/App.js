@@ -26,10 +26,6 @@ function App() {
 			});
 	}, []);
 
-	const displayTitle = () => {
-		return titles.map((title) => <p>{title}</p>);
-	};
-
 	return (
 		<div className="ui container">
 			<Header />
@@ -49,7 +45,6 @@ function App() {
 				<Route path="/post" component={Post} />
 			</BrowserRouter>
 			<Footer />
-			{displayTitle()}
 		</div>
 	);
 }
