@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const PostTitle = (props) => {
 	return (
-		<Link to="/post">
+		<Link to={`/post/${props.id}`}>
 			<div className="ui unstackable divided items">
 				<div className="item">
 					<div className="ui tiny image">
