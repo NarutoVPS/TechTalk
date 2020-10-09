@@ -6,7 +6,7 @@ const PostTitle = (props) => {
 		<Link to={`/post/${props.id}`}>
 			<div className="ui unstackable divided items">
 				<div className="item">
-					<div className="ui tiny image">
+					<div className="ui tiny circular image">
 						<img src="https://semantic-ui.com/images/wireframe/image.png" />
 					</div>
 					<div className="middle aligned content">

@@ -4,7 +4,7 @@ const PostHeader = (props) => {
 	return (
 		<div className="ui unstackable items">
 			<div className="item">
-				<div className="ui small image">
+				<div className="ui mini circular image">
 					<img src="https://semantic-ui.com/images/wireframe/image.png" />
 				</div>
 				<div className="content">
