@@ -12,8 +12,8 @@ const TopicContainer = (props) => {
 				{props.titles.map((eachTitle) => {
 					return (
 						<PostTitle
-							id={eachTitle.postId}
-							key={eachTitle.postId}
+							id={eachTitle.postid}
+							key={eachTitle.postid}
 							postTitle={eachTitle.title}
 						/>
 					);

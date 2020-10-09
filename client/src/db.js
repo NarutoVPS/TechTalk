@@ -10,10 +10,7 @@ export const getTitles = () => {
 			.get()
 			.then((snapshot) => {
 				snapshot.docs.map((doc) => {
-					titles.push({
-						title: doc.data().title,
-						postId: doc.data().postid,
-					});
+					titles.push(doc.data());
 				});
 				resolve(titles);
 			})

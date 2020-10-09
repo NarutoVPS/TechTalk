@@ -24,11 +24,22 @@ function App() {
 					exact
 					// component={() => <TopicContainer topic="JavaScript" />}
 					render={(props) => (
-						<TopicContainer
-							{...props}
-							topic="JavaScript"
-							titles={titles}
-						/>
+						<React.Fragment>
+							<TopicContainer
+								{...props}
+								topic="JavaScript"
+								titles={titles.filter(
+									(each) => each.topic == "JavaScript"
+								)}
+							/>
+							<TopicContainer
+								{...props}
+								topic="C++"
+								titles={titles.filter(
+									(each) => each.topic == "C++"
+								)}
+							/>
+						</React.Fragment>
 					)}
 				/>
 				<Route path="/post" component={Post} />
