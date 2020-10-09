@@ -11,6 +11,7 @@ import { getTitles } from "../db";
 
 function App() {
 	const [titles, setTitles] = useState([]);
+	const [userDetails, setUserDetails] = useState({});
 
 	useEffect(() => {
 		getTitles().then((res) => setTitles(res));
@@ -19,7 +20,7 @@ function App() {
 	return (
 		<div className="ui container">
 			<BrowserRouter>
-				<Header />
+				<Header setUserDetails={setUserDetails} />
 				<Route
 					path="/"
 					exact

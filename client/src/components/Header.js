@@ -2,12 +2,11 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 
-const Header = () => {
+const Header = (props) => {
 	const [activeTab, setActiveTab] = useState(window.location.pathname);
-	const [userDetails, setUserDetails] = useState({});
 
 	const onAuthSuccess = (response) => {
-		setUserDetails({
+		props.setUserDetails({
 			email: response.profileObj.email,
 			name: response.profileObj.name,
 			pic: response.profileObj.imageUrl,
