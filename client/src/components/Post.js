@@ -8,11 +8,8 @@ import { getPost } from "../db";
 const Post = (props) => {
 	const [post, setPost] = useState({});
 
-	let url = window.location.href;
-	const postTd = url.substring(url.length - 20, url.length);
-
 	useEffect(() => {
-		getPost(postTd).then((res) => setPost(res));
+		getPost(props.match.params.id).then((res) => setPost(res));
 	}, []);
 
 	return (
