@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 
 import PostHeader from "./PostHeader";
+import Feed from "./Feed";
 
 import { getPost } from "../db";
 
@@ -15,10 +16,15 @@ const Post = (props) => {
 	}, []);
 
 	return (
-		<div className="ui segment">
-			<PostHeader title={post.title} author={post.author} />
-			<p>{post.body}</p>
-		</div>
+		<React.Fragment>
+			<div className="ui segment">
+				<PostHeader title={post.title} author={post.author} />
+				<p>{post.body}</p>
+			</div>
+			<div className="ui segment">
+				<Feed />
+			</div>
+		</React.Fragment>
 	);
 };
 
