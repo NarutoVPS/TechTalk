@@ -30,7 +30,7 @@ const Header = (props) => {
 					clientId="1026934796505-ab6l8plame1lfi60rqo5n66ci9sist8s.apps.googleusercontent.com"
 					render={(renderProps) => (
 						<button
-							className="ui right floated button"
+							className="ui right floated primary button"
 							onClick={renderProps.onClick}
 							disabled={renderProps.disabled}
 						>
@@ -49,7 +49,7 @@ const Header = (props) => {
 				clientId="1026934796505-ab6l8plame1lfi60rqo5n66ci9sist8s.apps.googleusercontent.com"
 				render={(renderProps) => (
 					<button
-						className="ui right floated button"
+						className="ui right floated red button"
 						onClick={renderProps.onClick}
 						disabled={renderProps.disabled}
 					>
@@ -65,14 +65,13 @@ const Header = (props) => {
 
 	return (
 		<React.Fragment>
-			<div
-				onClick={onClickHandler}
-				className="ui three item unstackable tabs menu"
-			>
+			<div onClick={onClickHandler} class="ui top fixed menu">
+				<div class="item">
+					<img src="https://semantic-ui.com/images/logo.png" />
+				</div>
 				<Link
 					to="/"
 					className={`item ${activeTab == "/" ? "active" : ""}`}
-					data-tab="Home"
 				>
 					Home
 				</Link>
@@ -83,17 +82,13 @@ const Header = (props) => {
 				>
 					About
 				</Link>
-				<Link
-					to="/contact"
-					className={`item ${
-						activeTab == "/contact" ? "active" : ""
-					}`}
-					data-tab="Contact"
-				>
-					Contact
-				</Link>
+				<div className="item right floated">
+					{displaySignInStatus()}
+				</div>
 			</div>
-			{displaySignInStatus()}
+			<br />
+			<br />
+			<br />
 		</React.Fragment>
 	);
 };
