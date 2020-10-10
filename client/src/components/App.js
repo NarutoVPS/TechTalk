@@ -19,10 +19,10 @@ function App() {
 	}, []);
 
 	const onLoadHandler = () => {
-		setInterval(() => {
+		setTimeout(() => {
 			setIsLoggedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
 			console.log(window.gapi.auth2.getAuthInstance().isSignedIn.get());
-		}, 100);
+		}, 1000);
 	};
 
 	return (
