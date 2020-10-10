@@ -67,7 +67,7 @@ const Header = (props) => {
 		<React.Fragment>
 			<div onClick={onClickHandler} class="ui top fixed menu">
 				<div class="item">
-					<img src="https://semantic-ui.com/images/logo.png" />
+					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwLs07zT7biT2OloX3eLXAvGY5nCaSBgHigg&usqp=CAU" />
 				</div>
 				<Link
 					to="/"
@@ -86,6 +86,7 @@ const Header = (props) => {
 					{displaySignInStatus()}
 				</div>
 			</div>
+			<br />
 			<br />
 			<br />
 			<br />

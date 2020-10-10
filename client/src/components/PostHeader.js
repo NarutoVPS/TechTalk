@@ -10,7 +10,7 @@ const PostHeader = (props) => {
 				<div className="content">
 					<div className="header">{props.title}</div>
 					<div className="meta">
-						<span className="By ">{props.author}</span>
+						<span className="By ">Author: {props.author}</span>
 					</div>
 					<div className="description">
 						<p></p>
