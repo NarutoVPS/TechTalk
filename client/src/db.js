@@ -29,3 +29,24 @@ export const getPost = (id) => {
 			.catch((err) => reject(err));
 	});
 };
+
+export const addPost = (author, title, topic, body) => {
+	return new Promise((resolve, reject) => {
+		db.collection("Posts")
+			.add({
+				author,
+				body,
+				title,
+				topic,
+			})
+			.then((res) => {
+				db.collection("Titles")
+					.add({
+						postid: res.id,
+						title,
+						topic,
+					})
+					.then(() => resolve("Success"));
+			});
+	});
+};
