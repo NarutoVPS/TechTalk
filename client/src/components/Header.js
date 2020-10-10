@@ -11,10 +11,56 @@ const Header = (props) => {
 			name: response.profileObj.name,
 			pic: response.profileObj.imageUrl,
 		});
+		props.setIsLoggedIn(true);
+	};
+
+	const onLogOutSuccess = (response) => {
+		props.setIsLoggedIn(false);
+		console.log("Logged Out");
 	};
 
 	const onClickHandler = (e) => {
 		setActiveTab(window.location.pathname);
+	};
+
+	const displaySignInStatus = () => {
+		if (!props.isLoggedIn) {
+			return (
+				<GoogleLogin
+					clientId="1026934796505-ab6l8plame1lfi60rqo5n66ci9sist8s.apps.googleusercontent.com"
+					render={(renderProps) => (
+						<button
+							className="ui right floated button"
+							onClick={renderProps.onClick}
+							disabled={renderProps.disabled}
+						>
+							Sign In with Google
+						</button>
+					)}
+					buttonText="Login"
+					onSuccess={onAuthSuccess}
+					cookiePolicy={"single_host_origin"}
+				/>
+			);
+		}
+
+		return (
+			<GoogleLogout
+				clientId="1026934796505-ab6l8plame1lfi60rqo5n66ci9sist8s.apps.googleusercontent.com"
+				render={(renderProps) => (
+					<button
+						className="ui right floated button"
+						onClick={renderProps.onClick}
+						disabled={renderProps.disabled}
+					>
+						Sign Out
+					</button>
+				)}
+				buttonText="LogOut"
+				onLogoutSuccess={onLogOutSuccess}
+				cookiePolicy={"single_host_origin"}
+			/>
+		);
 	};
 
 	return (
@@ -47,21 +93,7 @@ const Header = (props) => {
 					Contact
 				</Link>
 			</div>
-			<GoogleLogin
-				clientId="1026934796505-ab6l8plame1lfi60rqo5n66ci9sist8s.apps.googleusercontent.com"
-				render={(renderProps) => (
-					<button
-						className="ui right floated button"
-						onClick={renderProps.onClick}
-						disabled={renderProps.disabled}
-					>
-						Sign In with Google
-					</button>
-				)}
-				buttonText="Login"
-				onSuccess={onAuthSuccess}
-				cookiePolicy={"single_host_origin"}
-			/>
+			{displaySignInStatus()}
 		</React.Fragment>
 	);
 };

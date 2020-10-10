@@ -11,16 +11,27 @@ import { getTitles } from "../db";
 
 function App() {
 	const [titles, setTitles] = useState([]);
+	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [userDetails, setUserDetails] = useState({});
 
 	useEffect(() => {
 		getTitles().then((res) => setTitles(res));
 	}, []);
 
+	// setIsLoggedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+
+	const onLoadHandler = () => {
+		setIsLoggedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+	};
+
 	return (
-		<div className="ui container">
+		<div onLoad={onLoadHandler} className="ui container">
 			<BrowserRouter>
-				<Header setUserDetails={setUserDetails} />
+				<Header
+					setUserDetails={setUserDetails}
+					isLoggedIn={isLoggedIn}
+					setIsLoggedIn={setIsLoggedIn}
+				/>
 				<Route
 					path="/"
 					exact
