@@ -21,7 +21,6 @@ function App() {
 	const onLoadHandler = () => {
 		setTimeout(() => {
 			setIsLoggedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
-			console.log(window.gapi.auth2.getAuthInstance().isSignedIn.get());
 		}, 1000);
 	};
 
