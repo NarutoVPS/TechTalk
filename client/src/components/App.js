@@ -6,6 +6,7 @@ import Footer from "./Footer";
 import TopicContainer from "./TopicContainer";
 import Post from "./Post";
 import About from "./About";
+import Options from "./Options";
 
 import { getTitles } from "../db";
 
@@ -38,6 +39,7 @@ function App() {
 					// component={() => <TopicContainer topic="JavaScript" />}
 					render={(props) => (
 						<React.Fragment>
+							<Options />
 							<TopicContainer
 								{...props}
 								topic="JavaScript"

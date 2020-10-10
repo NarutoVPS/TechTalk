@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import PostHeader from "./PostHeader";
 import Feed from "./Feed";
+import Options from "./Options";
 
 import { getPost } from "../db";
 
@@ -14,6 +15,9 @@ const Post = (props) => {
 
 	return (
 		<React.Fragment>
+			<Options />
+			<br />
+			<br />
 			<div className="ui segment">
 				<PostHeader title={post.title} author={post.author} />
 				<p>{post.body}</p>
