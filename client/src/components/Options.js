@@ -1,6 +1,12 @@
 import React from "react";
 
-const Options = () => {
+const Options = ({ showReply }) => {
+	if (!showReply) {
+		return (
+			<span className="ui right floated green button">Create a Post</span>
+		);
+	}
+
 	return (
 		<React.Fragment>
 			<span className="ui right floated primary button">Reply</span>

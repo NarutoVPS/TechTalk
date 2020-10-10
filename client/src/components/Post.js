@@ -15,7 +15,7 @@ const Post = (props) => {
 
 	return (
 		<React.Fragment>
-			<Options />
+			<Options showReply={true} />
 			<br />
 			<br />
 			<div className="ui segment">

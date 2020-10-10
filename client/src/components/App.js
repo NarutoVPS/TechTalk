@@ -39,7 +39,7 @@ function App() {
 					// component={() => <TopicContainer topic="JavaScript" />}
 					render={(props) => (
 						<React.Fragment>
-							<Options />
+							<Options showReply={false} />
 							<TopicContainer
 								{...props}
 								topic="JavaScript"
