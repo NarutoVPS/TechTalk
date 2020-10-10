@@ -9,6 +9,7 @@ import About from "./About";
 import Options from "./Options";
 
 import { getTitles } from "../db";
+import NewPost from "./NewPost";
 
 function App() {
 	const [titles, setTitles] = useState([]);
@@ -59,6 +60,7 @@ function App() {
 				/>
 				<Route path="/post/:id" component={Post} />
 				<Route path="/about" component={About} />
+				<Route path="/new" component={NewPost} />
 			</BrowserRouter>
 			<Footer />
 			<br />
