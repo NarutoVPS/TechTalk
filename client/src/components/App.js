@@ -18,10 +18,11 @@ function App() {
 		getTitles().then((res) => setTitles(res));
 	}, []);
 
-	// setIsLoggedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
-
 	const onLoadHandler = () => {
-		setIsLoggedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+		setInterval(() => {
+			setIsLoggedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+			console.log(window.gapi.auth2.getAuthInstance().isSignedIn.get());
+		}, 100);
 	};
 
 	return (
