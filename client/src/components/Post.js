@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import htmlParser from "react-html-parser";
 
 import PostHeader from "./PostHeader";
 import Feed from "./Feed";
@@ -20,7 +21,7 @@ const Post = (props) => {
 			<br />
 			<div className="ui segment">
 				<PostHeader title={post.title} author={post.author} />
-				<p>{post.body}</p>
+				<p>{htmlParser(post.body)}</p>
 			</div>
 			<div className="ui segment">
 				<Feed />
