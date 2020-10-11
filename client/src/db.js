@@ -67,3 +67,13 @@ export const addMember = (memberDetail) => {
 			.catch((err) => console.log(err));
 	});
 };
+
+export const getAuthor = (id) => {
+	return new Promise((resolve, reject) => {
+		db.collection("Members")
+			.doc(id)
+			.get()
+			.then((doc) => resolve(doc.data()))
+			.catch((err) => reject(err));
+	});
+};
