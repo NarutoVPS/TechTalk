@@ -23,7 +23,7 @@ function App() {
 	const onLoadHandler = () => {
 		setTimeout(() => {
 			setIsLoggedIn(window.gapi.auth2.getAuthInstance().isSignedIn.get());
-		}, 1000);
+		}, 2000);
 	};
 
 	return (
@@ -40,7 +40,10 @@ function App() {
 					// component={() => <TopicContainer topic="JavaScript" />}
 					render={(props) => (
 						<React.Fragment>
-							<Options showReply={false} />
+							<Options
+								showReply={false}
+								isLoggedIn={isLoggedIn}
+							/>
 							<TopicContainer
 								{...props}
 								topic="JavaScript"

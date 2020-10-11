@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 import Editor from "./Editor";
 
@@ -17,17 +18,22 @@ const NewPost = () => {
 	};
 
 	const onTitleChangeHandler = (e) => {
-		setTitle(e.target.value);
+		setTitle(e.target.value.trim());
 
-		if (title != "" && topic != "") setShowNext(true);
-		if (title == "") setShowNext(false);
+		// if (title != "" && topic != "") setShowNext(true);
+		// if (e.target.value.trim() == "") setShowNext(false);
 	};
 
 	const onTopicChangeHandler = (e) => {
 		setTopic(e.target.id);
 
-		if (title != "" && topic != "") setShowNext(true);
+		// if (title != "" && topic != "") setShowNext(true);
 	};
+
+	setInterval(() => {
+		if (title != "" && topic != "") setShowNext(true);
+		else setShowNext(false);
+	}, 100);
 
 	const onPostSubmit = () => {
 		addPost("SP Naruto", title, topic, postBody);

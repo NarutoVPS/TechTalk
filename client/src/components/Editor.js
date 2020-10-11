@@ -1,8 +1,7 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
-
-import { addPost } from "../db";
 
 const Editor = ({ setPostBody, onPostSubmit }) => {
 	const [valid, setValid] = useState(false);
@@ -15,13 +14,15 @@ const Editor = ({ setPostBody, onPostSubmit }) => {
 
 	return (
 		<div>
-			<div
-				className={`ui right floated primary button ${
-					valid ? "" : "disabled"
-				}`}
-				onClick={onPostSubmit}
-			>
-				Post
+			<div onClick={onPostSubmit}>
+				<Link
+					to="/"
+					className={`ui right floated primary button ${
+						valid ? "" : "disabled"
+					}`}
+				>
+					Post
+				</Link>
 			</div>
 			<br />
 			<br />

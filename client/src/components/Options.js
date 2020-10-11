@@ -1,17 +1,26 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Options = ({ showReply }) => {
+const Options = ({ showReply, isLoggedIn }) => {
+	const checkAccess = () => {
+		if (!isLoggedIn) alert("Please Log In");
+	};
+
 	if (!showReply) {
 		return (
-			<span className="ui right floated green button">Create a Post</span>
+			<Link to="/new" className="ui right floated green button">
+				Create a Post
+			</Link>
 		);
 	}
 
 	return (
-		<React.Fragment>
+		<div onCLick={checkAccess}>
 			<span className="ui right floated primary button">Reply</span>
-			<span className="ui right floated green button">Create a Post</span>
-		</React.Fragment>
+			<Link to="/new" className="ui right floated green button">
+				Create a Post
+			</Link>
+		</div>
 	);
 };
 
