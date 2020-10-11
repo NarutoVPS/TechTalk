@@ -12,6 +12,8 @@ const NewPost = () => {
 	const [title, setTitle] = useState("");
 	const [topic, setTopic] = useState("");
 
+	const user = JSON.parse(window.localStorage.getItem("UserDetails"));
+
 	const onClickHandler = (e) => {
 		e.preventDefault();
 		setShowEditor(true);
@@ -36,7 +38,7 @@ const NewPost = () => {
 	}, 100);
 
 	const onPostSubmit = () => {
-		addPost("SP Naruto", title, topic, postBody);
+		addPost(user.name, title, topic, postBody);
 	};
 
 	const initial = () => {
