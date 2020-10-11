@@ -15,6 +15,7 @@ const TopicContainer = (props) => {
 							id={eachTitle.postid}
 							key={eachTitle.postid}
 							postTitle={eachTitle.title}
+							pic={eachTitle.pic}
 						/>
 					);
 				})}

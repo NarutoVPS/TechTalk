@@ -7,10 +7,10 @@ const PostTitle = (props) => {
 			<div className="ui unstackable divided items">
 				<div className="item">
 					<div className="ui tiny circular image">
-						<img src="https://semantic-ui.com/images/wireframe/image.png" />
+						<img src={props.pic} />
 					</div>
 					<div className="middle aligned content">
-						{props.postTitle}
+						<h3>{props.postTitle}</h3>
 					</div>
 				</div>
 			</div>

@@ -5,7 +5,7 @@ const PostHeader = ({ author, title }) => {
 	return (
 		<div className="ui unstackable items">
 			<div className="item">
-				<div className="ui mini circular image">
+				<div className="ui mini image">
 					<img src={author.pic} />
 				</div>
 				<div className="content">

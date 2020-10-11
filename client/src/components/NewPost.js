@@ -38,7 +38,7 @@ const NewPost = () => {
 	}, 100);
 
 	const onPostSubmit = () => {
-		addPost(user.email, user.name, title, topic, postBody);
+		addPost(user.email, user.name, title, topic, postBody, user.pic);
 	};
 
 	const initial = () => {
