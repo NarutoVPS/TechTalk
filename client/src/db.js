@@ -50,3 +50,20 @@ export const addPost = (author, title, topic, body) => {
 			});
 	});
 };
+
+export const addMember = (memberDetail) => {
+	return new Promise((resolve, reject) => {
+		db.collection("Members")
+			.doc(memberDetail.email)
+			.get()
+			.then((snapshot) => {
+				if (snapshot.exists) resolve("Yes");
+				else {
+					db.collection("Members")
+						.doc(memberDetail.email)
+						.set(memberDetail);
+				}
+			})
+			.catch((err) => console.log(err));
+	});
+};

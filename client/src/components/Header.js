@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
 
+import { addMember } from "../db";
+
 const Header = (props) => {
 	const [activeTab, setActiveTab] = useState(window.location.pathname);
 
@@ -16,6 +18,8 @@ const Header = (props) => {
 
 		props.setUserDetails(details);
 		props.setIsLoggedIn(true);
+
+		addMember(details);
 	};
 
 	const onLogOutSuccess = (response) => {
