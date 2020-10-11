@@ -6,16 +6,21 @@ const Header = (props) => {
 	const [activeTab, setActiveTab] = useState(window.location.pathname);
 
 	const onAuthSuccess = (response) => {
-		props.setUserDetails({
+		const details = {
 			email: response.profileObj.email,
 			name: response.profileObj.name,
 			pic: response.profileObj.imageUrl,
-		});
+		};
+
+		window.localStorage.setItem("UserDetails", JSON.stringify(details));
+
+		props.setUserDetails(details);
 		props.setIsLoggedIn(true);
 	};
 
 	const onLogOutSuccess = (response) => {
 		props.setIsLoggedIn(false);
+		window.localStorage.setItem("UserDetails", null);
 		console.log("Logged Out");
 	};
 
