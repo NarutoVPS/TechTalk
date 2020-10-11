@@ -30,11 +30,12 @@ export const getPost = (id) => {
 	});
 };
 
-export const addPost = (author, title, topic, body) => {
+export const addPost = (authorId, authorName, title, topic, body) => {
 	return new Promise((resolve, reject) => {
 		db.collection("Posts")
 			.add({
-				author,
+				authorId,
+				authorName,
 				body,
 				title,
 				topic,
