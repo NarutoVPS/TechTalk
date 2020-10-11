@@ -5,13 +5,17 @@ import PostHeader from "./PostHeader";
 import Feed from "./Feed";
 import Options from "./Options";
 
-import { getPost } from "../db";
+import { getPost, getAuthor } from "../db";
 
 const Post = (props) => {
 	const [post, setPost] = useState({});
+	const [author, setAuthor] = useState({});
 
 	useEffect(() => {
-		getPost(props.match.params.id).then((res) => setPost(res));
+		getPost(props.match.params.id).then((res) => {
+			setPost(res);
+			getAuthor(res.authorId).then((res) => setAuthor(res));
+		});
 	}, []);
 
 	return (
@@ -20,7 +24,7 @@ const Post = (props) => {
 			<br />
 			<br />
 			<div className="ui segment">
-				<PostHeader title={post.title} author={post.author} />
+				<PostHeader title={post.title} author={author} />
 				<p>{htmlParser(post.body)}</p>
 			</div>
 			<div className="ui segment">
