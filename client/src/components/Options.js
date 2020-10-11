@@ -15,9 +15,9 @@ const Options = ({ showReply, isLoggedIn }) => {
 	const showWarning = () => {
 		if (!isSignedIn) {
 			return (
-				<span className="ui compact warning message">
+				<div className="ui warning message">
 					<p>Please Sign In to Create or Reply Post</p>
-				</span>
+				</div>
 			);
 		}
 
