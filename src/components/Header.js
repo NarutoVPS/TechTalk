@@ -22,6 +22,10 @@ const Header = (props) => {
 		addMember(details);
 	};
 
+	const onAuthFailure = (response) => {
+		console.log(response);
+	};
+
 	const onLogOutSuccess = (response) => {
 		props.setIsLoggedIn(false);
 		window.localStorage.setItem("UserDetails", null);
@@ -48,6 +52,7 @@ const Header = (props) => {
 					)}
 					buttonText="Login"
 					onSuccess={onAuthSuccess}
+					onFailure={onAuthFailure}
 					cookiePolicy={"single_host_origin"}
 				/>
 			);
