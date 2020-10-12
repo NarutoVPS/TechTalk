@@ -79,3 +79,15 @@ export const getAuthor = (id) => {
 			.catch((err) => reject(err));
 	});
 };
+
+export const addReply = (postId, reply) => {
+	return new Promise((resolve, reject) => {
+		db.collection("Posts")
+			.doc(postId)
+			.update({
+				reply: firebase.firestore.FieldValue.arrayUnion(reply),
+			})
+			.then((res) => resolve("Added"))
+			.catch((err) => console.log(err));
+	});
+};
