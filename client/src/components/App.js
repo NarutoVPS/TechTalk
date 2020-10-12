@@ -7,6 +7,7 @@ import TopicContainer from "./TopicContainer";
 import Post from "./Post";
 import About from "./About";
 import Options from "./Options";
+import ReplyEditor from "./ReplyEditor";
 
 import { getTitles } from "../db";
 import NewPost from "./NewPost";
@@ -64,6 +65,7 @@ function App() {
 				<Route path="/post/:id" component={Post} />
 				<Route path="/about" component={About} />
 				<Route path="/new" component={NewPost} />
+				<Route path="/reply/:id" component={ReplyEditor} />
 			</BrowserRouter>
 			<Footer />
 			<br />

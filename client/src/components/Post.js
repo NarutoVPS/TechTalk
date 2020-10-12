@@ -20,7 +20,7 @@ const Post = (props) => {
 
 	return (
 		<React.Fragment>
-			<Options showReply={true} />
+			<Options showReply={true} postId={props.match.params.id} />
 			<br />
 			<br />
 			<div className="ui segment">

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-const Options = ({ showReply, isLoggedIn }) => {
+const Options = ({ showReply, isLoggedIn, postId }) => {
 	let isSignedIn = null;
 
 	try {
@@ -43,13 +43,14 @@ const Options = ({ showReply, isLoggedIn }) => {
 	return (
 		<div>
 			{showWarning()}
-			<span
+			<Link
+				to={`/reply/${postId}`}
 				className={`ui right floated primary button ${
 					isSignedIn ? "" : "disabled"
 				}`}
 			>
 				Reply
-			</span>
+			</Link>
 			<Link
 				to="/new"
 				className={`ui right floated green button ${
