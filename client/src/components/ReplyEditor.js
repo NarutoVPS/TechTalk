@@ -9,6 +9,8 @@ const ReplyEditor = (props) => {
 	const [valid, setValid] = useState(false);
 	const [replyBody, setReplyBody] = useState("");
 
+	const author = JSON.parse(window.localStorage.getItem("UserDetails"));
+
 	const onChangeHandler = (e, editor) => {
 		setReplyBody(editor.getData());
 		if (editor.getData() != "") setValid(true);
@@ -16,7 +18,8 @@ const ReplyEditor = (props) => {
 	};
 
 	const onReplySubmit = () => {
-		addReply(props.match.params.id, replyBody).then((res) =>
+		author.body = replyBody;
+		addReply(props.match.params.id, author).then((res) =>
 			console.log("Added")
 		);
 	};
