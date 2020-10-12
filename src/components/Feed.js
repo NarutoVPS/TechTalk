@@ -13,7 +13,6 @@ const Feed = ({ postId, replys = [] }) => {
 						<div className="content">
 							<div className="summary">
 								<a>{reply.name}</a>
-								{/* <div className="date">3 days ago</div> */}
 							</div>
 							<div className="extra text">
 								{htmlParser(reply.body)}
