@@ -1,24 +1,27 @@
 import React from "react";
+import htmlParser from "react-html-parser";
 
-const Feed = () => {
+const Feed = ({ postId, replys = [] }) => {
 	return (
 		<div className="ui feed">
-			<div className="event">
-				<div className="label">
-					<img src="https://semantic-ui.com/images/avatar/small/elliot.jpg" />
-				</div>
-				<div className="content">
-					<div className="summary">
-						<a className="user">Elliot Fu</a> added you as a friend
-						<div className="date">1 Hour Ago</div>
+			{replys.map((reply) => {
+				return (
+					<div className="event">
+						<div className="label">
+							<img src={reply.pic} />
+						</div>
+						<div className="content">
+							<div className="summary">
+								<a>{reply.name}</a>
+								<div className="date">3 days ago</div>
+							</div>
+							<div className="extra text">
+								{htmlParser(reply.body)}
+							</div>
+						</div>
 					</div>
-					<div className="meta">
-						<a className="like">
-							<i className="like icon"></i> 4 Likes
-						</a>
-					</div>
-				</div>
-			</div>
+				);
+			})}
 		</div>
 	);
 };

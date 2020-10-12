@@ -28,7 +28,7 @@ const Post = (props) => {
 				<p>{htmlParser(post.body)}</p>
 			</div>
 			<div className="ui segment">
-				<Feed />
+				<Feed postId={props.match.params.id} replys={post.reply} />
 			</div>
 		</React.Fragment>
 	);
