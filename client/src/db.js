@@ -49,7 +49,8 @@ export const addPost = (authorId, authorName, title, topic, body, pic) => {
 						pic,
 					})
 					.then(() => resolve("Success"));
-			});
+			})
+			.catch((err) => console.log(err));
 	});
 };
 
