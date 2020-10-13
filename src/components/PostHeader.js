@@ -1,4 +1,3 @@
-import { auth } from "firebase";
 import React from "react";
 import dayjs from "dayjs";
 
@@ -10,7 +9,7 @@ const PostHeader = ({ author, title, datePosted, topic }) => {
 					<img src={author.pic} />
 				</div>
 				<div className="content">
-					<a className="header">{title}</a>
+					<span className="header">{title}</span>
 					<div className="meta">
 						<span>Author: {author.name}</span>
 					</div>
