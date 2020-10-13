@@ -13,7 +13,7 @@ const MemberProfile = (props) => {
 	}, []);
 
 	return (
-		<div className="ui card">
+		<div className="ui centered card">
 			<div className="image">
 				<img src={memberProfile.pic} />
 			</div>
