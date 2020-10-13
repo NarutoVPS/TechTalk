@@ -1,5 +1,6 @@
 import React from "react";
 import htmlParser from "react-html-parser";
+import { Link } from "react-router-dom";
 
 const Feed = ({ postId, replys = [] }) => {
 	return (
@@ -11,9 +12,12 @@ const Feed = ({ postId, replys = [] }) => {
 							<img src={reply.pic} />
 						</div>
 						<div className="content">
-							<div className="summary">
-								<a>{reply.name}</a>
-							</div>
+							<Link to={"/member/" + reply.email}>
+								<div className="summary">
+									<a>{reply.name}</a>
+								</div>
+							</Link>
+
 							<div className="extra text">
 								{htmlParser(reply.body)}
 							</div>
