@@ -92,3 +92,13 @@ export const addReply = (postId, reply) => {
 			.catch((err) => console.log(err));
 	});
 };
+
+export const getMemberProfile = (id) => {
+	return new Promise((resolve, reject) => {
+		db.collection("Members")
+			.doc(id)
+			.get()
+			.then((doc) => resolve(doc.data()))
+			.catch((err) => reject(err));
+	});
+};
