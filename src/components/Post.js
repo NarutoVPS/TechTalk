@@ -24,7 +24,12 @@ const Post = (props) => {
 			<br />
 			<br />
 			<div className="ui segment">
-				<PostHeader title={post.title} author={author} />
+				<PostHeader
+					title={post.title}
+					author={author}
+					datePosted={post.datePosted}
+					topic={post.topic}
+				/>
 				<p>{htmlParser(post.body)}</p>
 			</div>
 			<div className="ui segment">

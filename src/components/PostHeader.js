@@ -2,24 +2,31 @@ import { auth } from "firebase";
 import React from "react";
 import dayjs from "dayjs";
 
-const PostHeader = ({ author, title, datePosted }) => {
+const PostHeader = ({ author, title, datePosted, topic }) => {
 	return (
-		<div className="ui unstackable items" id="postHeader">
+		<div className="ui divided items">
 			<div className="item">
-				<div className="ui tiny circular image">
+				<div className="ui circular image">
 					<img src={author.pic} />
 				</div>
 				<div className="content">
-					<div className="header">{title}</div>
+					<a className="header">{title}</a>
 					<div className="meta">
-						<div className="By">Author: {author.name}</div>
-						<div>
-							Posted On :{" "}
+						<span>Author: {author.name}</span>
+					</div>
+					<div className="meta">
+						<span>
 							{dayjs(datePosted).format("ddd, D MMM YYYY")}
-						</div>
+						</span>
 					</div>
 					<div className="description">
 						<p></p>
+					</div>
+					<div className="extra">
+						<div className="ui label">{topic}</div>
+						{/* <div className="ui label">
+							<i className="globe icon"></i> Additional Languages
+						</div> */}
 					</div>
 				</div>
 			</div>
