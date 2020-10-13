@@ -78,12 +78,8 @@ const NewPost = () => {
 					</div>
 					<div className="field">
 						<div className="ui radio checkbox">
-							<input
-								type="radio"
-								id="Programming Language"
-								name="topic"
-							/>
-							<label>Programming Language</label>
+							<input type="radio" id="Programming" name="topic" />
+							<label>Programming</label>
 						</div>
 					</div>
 					<div className="field">

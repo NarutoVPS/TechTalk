@@ -3,6 +3,8 @@ import React from "react";
 import PostTitle from "./PostTitle";
 
 const TopicContainer = (props) => {
+	if (props.titles.length == 0) return null;
+
 	return (
 		<React.Fragment>
 			<div className="ui top attached tabular menu">
