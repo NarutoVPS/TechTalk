@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import dayjs from "dayjs";
 
 import { getMemberProfile } from "../db";
+import { parseImgUrl } from "../utils";
 
 const MemberProfile = (props) => {
 	const [memberProfile, setMemberProfile] = useState({});
@@ -15,7 +16,7 @@ const MemberProfile = (props) => {
 	return (
 		<div className="ui centered card">
 			<div className="image">
-				<img src={memberProfile.pic} />
+				<img src={parseImgUrl(memberProfile.pic)} />
 			</div>
 			<div className="content">
 				<span className="header">{memberProfile.name}</span>
