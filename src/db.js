@@ -57,6 +57,7 @@ export const addPost = (
 						title,
 						topic,
 						pic,
+						author: authorId,
 					})
 					.then(() => resolve("Success"));
 			})
@@ -110,6 +111,22 @@ export const getMemberProfile = (id) => {
 			.doc(id)
 			.get()
 			.then((doc) => resolve(doc.data()))
+			.catch((err) => reject(err));
+	});
+};
+
+export const getMemberPosts = (id) => {
+	const posts = [];
+	return new Promise((resolve, reject) => {
+		db.collection("Titles")
+			.where("author", "==", id)
+			.get()
+			.then((snapshot) => {
+				snapshot.forEach((doc) => {
+					posts.push(doc.data());
+				});
+				resolve(posts);
+			})
 			.catch((err) => reject(err));
 	});
 };
