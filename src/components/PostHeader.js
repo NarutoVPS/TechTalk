@@ -1,12 +1,15 @@
 import React from "react";
 import dayjs from "dayjs";
+import { Link } from "react-router-dom";
 
 const PostHeader = ({ author, title, datePosted, topic }) => {
 	return (
 		<div className="ui divided items">
 			<div className="item">
 				<div className="ui circular image">
-					<img src={author.pic} />
+					<Link to={"/member/" + author.email}>
+						<img src={author.pic} />
+					</Link>
 				</div>
 				<div className="content">
 					<span className="header">{title}</span>
