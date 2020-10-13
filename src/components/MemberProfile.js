@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import dayjs from "dayjs";
 
 import { getMemberProfile } from "../db";
 
@@ -17,19 +18,19 @@ const MemberProfile = (props) => {
 				<img src={memberProfile.pic} />
 			</div>
 			<div className="content">
-				<a className="header">{memberProfile.name}</a>
+				<span className="header">{memberProfile.name}</span>
 				<div className="meta">
-					<span className="date">Joined in 2013</span>
-				</div>
-				<div className="description">
-					Kristy is an art director living in New York.
+					<span className="date">
+						Joined in{" "}
+						{dayjs(memberProfile.joined).format("ddd, D MMM YYYY")}
+					</span>
 				</div>
 			</div>
 			<div className="extra content">
-				<a>
-					<i className="user icon"></i>
+				<span>
+					{/* <i className="user icon"></i> */}
 					22 Posts
-				</a>
+				</span>
 			</div>
 		</div>
 	);

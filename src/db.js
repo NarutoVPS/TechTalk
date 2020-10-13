@@ -1,4 +1,5 @@
 import firebase from "./firebase";
+import dayjs from "dayjs";
 
 const db = firebase.firestore();
 
@@ -55,7 +56,7 @@ export const addPost = (authorId, authorName, title, topic, body, pic) => {
 };
 
 export const addMember = (memberDetail) => {
-	memberDetail.joined = firebase.firestore.FieldValue.serverTimestamp();
+	memberDetail.joined = String(dayjs());
 	return new Promise((resolve, reject) => {
 		db.collection("Members")
 			.doc(memberDetail.email)
