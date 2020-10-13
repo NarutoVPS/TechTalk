@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 
+import dayjs from "dayjs";
 import Editor from "./Editor";
 
 import { addPost } from "../db";
@@ -37,7 +38,15 @@ const NewPost = () => {
 	}, 100);
 
 	const onPostSubmit = () => {
-		addPost(user.email, user.name, title, topic, postBody, user.pic);
+		addPost(
+			user.email,
+			user.name,
+			title,
+			topic,
+			postBody,
+			user.pic,
+			String(dayjs())
+		);
 	};
 
 	const initial = () => {

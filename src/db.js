@@ -31,7 +31,15 @@ export const getPost = (id) => {
 	});
 };
 
-export const addPost = (authorId, authorName, title, topic, body, pic) => {
+export const addPost = (
+	authorId,
+	authorName,
+	title,
+	topic,
+	body,
+	pic,
+	datePosted
+) => {
 	return new Promise((resolve, reject) => {
 		db.collection("Posts")
 			.add({
@@ -40,6 +48,7 @@ export const addPost = (authorId, authorName, title, topic, body, pic) => {
 				body,
 				title,
 				topic,
+				datePosted,
 			})
 			.then((res) => {
 				db.collection("Titles")
