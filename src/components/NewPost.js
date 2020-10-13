@@ -68,24 +68,42 @@ const NewPost = () => {
 					<label>Select a Topic</label>
 					<div className="field">
 						<div className="ui radio checkbox">
-							<input type="radio" id="JavaScript" name="topic" />
-							<label>JavaScript</label>
-						</div>
-					</div>
-					<div className="field">
-						<div className="ui radio checkbox">
-							<input type="radio" id="C++" name="topic" />
-							<label>C++</label>
+							<input
+								type="radio"
+								id="Web Development"
+								name="topic"
+							/>
+							<label>Web Development</label>
 						</div>
 					</div>
 					<div className="field">
 						<div className="ui radio checkbox">
 							<input
 								type="radio"
-								id="About this Project"
+								id="Programming Language"
 								name="topic"
 							/>
-							<label>About this Project</label>
+							<label>Programming Language</label>
+						</div>
+					</div>
+					<div className="field">
+						<div className="ui radio checkbox">
+							<input
+								type="radio"
+								id="Machine Learning / AI"
+								name="topic"
+							/>
+							<label>Machine Learning / AI </label>
+						</div>
+					</div>
+					<div className="field">
+						<div className="ui radio checkbox">
+							<input
+								type="radio"
+								id="About this Project (Query / Feedback)"
+								name="topic"
+							/>
+							<label>About this Project (Query / Feedback)</label>
 						</div>
 					</div>
 					<div className="field">
