@@ -80,9 +80,11 @@ const Header = (props) => {
 	return (
 		<React.Fragment>
 			<div onClick={onClickHandler} className="ui top fixed menu">
-				<div className="item">
-					<img src="./icon.svg" />
-				</div>
+				<Link to="/">
+					<div className="item">
+						<img src="./icon.svg" />
+					</div>
+				</Link>
 				<Link
 					to="/"
 					className={`item ${activeTab == "/" ? "active" : ""}`}
