@@ -80,3 +80,12 @@ body {
 hr {
 	color: black;
 }
+
+/* a tags */
+p > a {
+	color: aqua;
+}
+
+p > a:hover {
+	color: yellow;
+}

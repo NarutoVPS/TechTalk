@@ -20,8 +20,8 @@ const ReplyEditor = (props) => {
 	const onReplySubmit = () => {
 		replyDetails.body = replyBody;
 		addReply(props.match.params.id, replyDetails).then((res) =>
-			console.log("Added")
-		);
+			console.log("Success")
+		).catch(err => console.log(err))
 	};
 
 	return (
@@ -29,9 +29,8 @@ const ReplyEditor = (props) => {
 			<div onClick={onReplySubmit}>
 				<Link
 					to={"/post/" + props.match.params.id}
-					className={`ui right floated primary button ${
-						valid ? "" : "disabled"
-					}`}
+					className={`ui right floated primary button ${valid ? "" : "disabled"
+						}`}
 				>
 					Post
 				</Link>

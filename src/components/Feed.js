@@ -5,8 +5,6 @@ import { Link } from "react-router-dom";
 const Feed = ({ postId, replys = [] }) => {
 	if (replys.length == 0) return null;
 
-	console.log(replys);
-
 	return (
 		<div className="ui feed">
 			{replys.map((reply) => {
