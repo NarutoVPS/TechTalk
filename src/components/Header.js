@@ -81,7 +81,7 @@ const Header = (props) => {
 		<React.Fragment>
 			<div onClick={onClickHandler} className="ui top fixed menu">
 				<div className="item">
-					<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQwLs07zT7biT2OloX3eLXAvGY5nCaSBgHigg&usqp=CAU" />
+					<img src="./icon.svg" />
 				</div>
 				<Link
 					to="/"
