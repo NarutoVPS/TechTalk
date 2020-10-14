@@ -62,3 +62,8 @@ hr {
 	color: white;
 	background-color: rgba(0, 0, 0, 0.1);
 }
+
+/* Footer */
+.ui.horizontal.divided.list > .item:first-child {
+	color: white;
+}
