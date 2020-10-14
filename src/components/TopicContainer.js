@@ -7,10 +7,11 @@ const TopicContainer = (props) => {
 
 	return (
 		<React.Fragment>
-			<div className="ui top attached tabular menu">
-				<div className="active item">{props.topic}</div>
+			<div className="ui segments">
+			<div className="ui segment">
+				<p>{props.topic}</p>
 			</div>
-			<div className="ui bottom attached active tab segment">
+			<div className="ui secondary segment">
 				{props.titles.map((eachTitle) => {
 					return (
 						<PostTitle
@@ -22,6 +23,8 @@ const TopicContainer = (props) => {
 					);
 				})}
 			</div>
+			</div>
+
 		</React.Fragment>
 	);
 };

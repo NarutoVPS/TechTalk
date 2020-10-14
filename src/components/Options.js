@@ -30,12 +30,15 @@ const Options = ({ showReply, isLoggedIn, postId }) => {
 				{showWarning()}
 				<Link
 					to="/new"
-					className={`ui right floated green button ${
+					className={`ui right floated primary button ${
 						isSignedIn ? "" : "disabled"
 					}`}
 				>
 					Create a Post
 				</Link>
+			<br/>
+			<br/>
+
 			</React.Fragment>
 		);
 	}
@@ -53,12 +56,15 @@ const Options = ({ showReply, isLoggedIn, postId }) => {
 			</Link>
 			<Link
 				to="/new"
-				className={`ui right floated green button ${
+				className={`ui right floated primary button ${
 					isSignedIn ? "" : "disabled"
 				}`}
 			>
 				Create a Post
 			</Link>
+			<br/>
+			<br/>
+			
 		</div>
 	);
 };

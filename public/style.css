@@ -1,0 +1,64 @@
+body {
+	background-image: linear-gradient(
+		to right top,
+		#051937,
+		#004d7a,
+		#008793,
+		#00bf72,
+		#a8eb12
+	);
+	background-size: cover;
+	background-attachment: fixed;
+	height: 100%;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+/* header */
+.ui[class*="top fixed"].menu {
+	/* background: #48cae4; */
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* topic container (top) */
+.ui.segments:not(.horizontal) > .segment:first-child {
+	border: none !important;
+	color: yellow;
+	font-family: "Fredoka One", cursive;
+	font-size: large;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* topic container (body) */
+.ui.segments:not(.horizontal) > .segment:last-child {
+	border: none !important;
+	background-color: rgba(0, 0, 0, 0.1);
+}
+
+.ui.divided.items > .item:last-child {
+	color: white;
+}
+
+/* Post & Reply */
+.ui.segment,
+.ui.segments .segment {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+hr {
+	color: black;
+}
+
+.ui.feed > .event > .content a {
+	color: wheat;
+}
+
+/* warning msg */
+.ui.attached.warning.message,
+.ui.warning.message {
+	border: none !important;
+	color: white;
+	background-color: rgba(0, 0, 0, 0.1);
+}
