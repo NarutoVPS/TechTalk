@@ -40,7 +40,7 @@ const MemberProfile = (props) => {
 				<div className="extra content">
 					<span>
 						{/* <i className="user icon"></i> */}
-						22 Posts
+						{`${memberPosts.length} Posts`}
 					</span>
 				</div>
 			</div>
