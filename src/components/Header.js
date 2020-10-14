@@ -79,25 +79,34 @@ const Header = (props) => {
 
 	return (
 		<React.Fragment>
-			<div onClick={onClickHandler} className="ui top fixed menu inverted">
-				<Link to="/">
+			<div
+				onClick={onClickHandler}
+				className="ui top fixed menu inverted"
+			>
+				{/* <Link to="/">
 					<div className="item">
 						<img src="./icon.svg" />
 					</div>
-				</Link>
+				</Link> */}
+				<a
+					className="item"
+					href="https://github.com/NarutoVPS/TechTalk"
+				>
+					<img src="./github.svg" />
+				</a>
 				<Link
 					to="/"
 					className={`item ${activeTab == "/" ? "active" : ""}`}
 				>
 					Home
 				</Link>
-				<Link
+				{/* <Link
 					to="/about"
 					className={`item ${activeTab == "/about" ? "active" : ""}`}
 					data-tab="About"
 				>
 					About
-				</Link>
+				</Link> */}
 				<div className="item right floated">
 					{displaySignInStatus()}
 				</div>
