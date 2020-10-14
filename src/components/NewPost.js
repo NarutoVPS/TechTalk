@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 import dayjs from "dayjs";
 import Editor from "./Editor";
+import swal from "sweetalert";
 
 import { addPost } from "../db";
 
@@ -45,8 +46,10 @@ const NewPost = () => {
 			topic,
 			postBody,
 			user.pic,
-			String(dayjs()),
-		);
+			String(dayjs())
+		)
+			.then(() => swal("Success", "Post Created", "success"))
+			.catch((err) => console.log(err));
 	};
 
 	const initial = () => {

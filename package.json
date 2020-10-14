@@ -15,7 +15,8 @@
 		"react-google-login": "^5.1.21",
 		"react-html-parser": "^2.0.2",
 		"react-router-dom": "^5.2.0",
-		"react-scripts": "3.4.3"
+		"react-scripts": "3.4.3",
+		"sweetalert": "^2.1.2"
 	},
 	"scripts": {
 		"start": "react-scripts start",

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import CKEditor from "@ckeditor/ckeditor5-react";
 import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
+import swal from "sweetalert";
 
 import { addReply } from "../db";
 
@@ -19,9 +20,11 @@ const ReplyEditor = (props) => {
 
 	const onReplySubmit = () => {
 		replyDetails.body = replyBody;
-		addReply(props.match.params.id, replyDetails).then((res) =>
-			console.log("Success")
-		).catch(err => console.log(err))
+		addReply(props.match.params.id, replyDetails)
+			.then((res) => {
+				swal("Success", "Reply was posted", "success");
+			})
+			.catch((err) => console.log(err));
 	};
 
 	return (
@@ -29,8 +32,9 @@ const ReplyEditor = (props) => {
 			<div onClick={onReplySubmit}>
 				<Link
 					to={"/post/" + props.match.params.id}
-					className={`ui right floated primary button ${valid ? "" : "disabled"
-						}`}
+					className={`ui right floated primary button ${
+						valid ? "" : "disabled"
+					}`}
 				>
 					Post
 				</Link>
