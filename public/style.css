@@ -51,6 +51,19 @@ body {
 	color: wheat;
 }
 
+.ui.centered.card {
+	border: none !important;
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Font inside profile card */
+.ui.card > .extra,
+.ui.cards > .card > .extra,
+.ui.card .meta *,
+.ui.cards > .card .meta * {
+	color: wheat;
+}
+
 /* Footer */
 .ui.horizontal.divided.list > .item:first-child {
 	color: white;
