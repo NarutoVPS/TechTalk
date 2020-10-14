@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GoogleLogin, GoogleLogout } from "react-google-login";
+import swal from "sweetalert";
 
 import { addMember } from "../db";
 
@@ -8,6 +9,7 @@ const Header = (props) => {
 	const [activeTab, setActiveTab] = useState(window.location.pathname);
 
 	const onAuthSuccess = (response) => {
+		swal("Success", "Signed In Successfully", "success");
 		const details = {
 			email: response.profileObj.email,
 			name: response.profileObj.name,
@@ -19,7 +21,7 @@ const Header = (props) => {
 		props.setUserDetails(details);
 		props.setIsLoggedIn(true);
 
-		addMember(details);
+		addMember(details).catch((err) => console.log(err));
 	};
 
 	const onAuthFailure = (response) => {
@@ -27,6 +29,7 @@ const Header = (props) => {
 	};
 
 	const onLogOutSuccess = (response) => {
+		swal("Success", "Signed Out Successfully", "success");
 		props.setIsLoggedIn(false);
 		window.localStorage.setItem("UserDetails", null);
 		console.log("Logged Out");
