@@ -30,7 +30,7 @@ const Post = (props) => {
 					datePosted={post.datePosted}
 					topic={post.topic}
 				/>
-				<p>{htmlParser(post.body)}</p>
+				<p className="postBody">{htmlParser(post.body)}</p>
 			</div>
 			{post.reply ? (
 				<div className="ui segment">

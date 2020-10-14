@@ -45,7 +45,7 @@ const NewPost = () => {
 			topic,
 			postBody,
 			user.pic,
-			String(dayjs())
+			String(dayjs()),
 		);
 	};
 

@@ -9,6 +9,7 @@ import About from "./About";
 import Options from "./Options";
 import ReplyEditor from "./ReplyEditor";
 import MemberProfile from "./MemberProfile";
+import PostLike from './PostLike'
 
 import { getTitles } from "../db";
 import NewPost from "./NewPost";
@@ -58,6 +59,7 @@ function App() {
 								return (
 									<TopicContainer
 										{...props}
+										key={titles.author}
 										topic={topic} //Name of the topic
 										titles={titles.filter(
 											(eachTitle) =>
@@ -74,9 +76,10 @@ function App() {
 				<Route path="/new" component={NewPost} />
 				<Route path="/reply/:id" component={ReplyEditor} />
 				<Route path="/member/:email" component={MemberProfile} />
+				<Route path="/like" component={PostLike} />
+
 			</BrowserRouter>
-			<Footer />
-			<br />
+			{/* <Footer /> */}
 			<br />
 		</div>
 	);

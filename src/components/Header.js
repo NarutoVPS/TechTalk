@@ -79,7 +79,7 @@ const Header = (props) => {
 
 	return (
 		<React.Fragment>
-			<div onClick={onClickHandler} className="ui top fixed menu">
+			<div onClick={onClickHandler} className="ui top fixed menu inverted">
 				<Link to="/">
 					<div className="item">
 						<img src="./icon.svg" />
