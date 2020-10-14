@@ -47,12 +47,13 @@ body {
 	background-color: rgba(255, 255, 255, 0.1);
 }
 
-hr {
-	color: black;
-}
-
 .ui.feed > .event > .content a {
 	color: wheat;
+}
+
+/* Footer */
+.ui.horizontal.divided.list > .item:first-child {
+	color: white;
 }
 
 /* warning msg */
@@ -63,7 +64,6 @@ hr {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-/* Footer */
-.ui.horizontal.divided.list > .item:first-child {
-	color: white;
+hr {
+	color: black;
 }
