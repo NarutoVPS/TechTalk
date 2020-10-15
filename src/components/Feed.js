@@ -11,13 +11,15 @@ const Feed = ({ postId, replys = [] }) => {
 				return (
 					<div className="event">
 						<div className="label">
-							<img src={reply.pic} />
+							<Link to={"/member/" + reply.email}>
+								<img src={reply.pic} />
+							</Link>
 						</div>
 						<div className="content">
 							<Link to={"/member/" + reply.email}>
-								<div className="summary">
+								<span className="summary">
 									<a>{reply.name}</a>
-								</div>
+								</span>
 							</Link>
 
 							<div className="extra text">
