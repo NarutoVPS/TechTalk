@@ -11,30 +11,6 @@ const Interact = () => {
 			>
 				<i class="left long arrow icon"></i>
 			</div>
-			<div
-				class="ui button"
-				data-animation="flip"
-				data-direction="up"
-				title="Flip Up"
-			>
-				<i class="up long arrow icon"></i>
-			</div>
-			<div
-				class="ui icon button"
-				data-animation="flip"
-				data-direction="down"
-				title="Flip Down"
-			>
-				<i class="down long arrow icon"></i>
-			</div>
-			<div
-				class="ui icon button"
-				data-animation="flip"
-				data-direction="right"
-				title="Flip Right"
-			>
-				<i class="right long arrow icon"></i>
-			</div>
 		</div>
 	);
 };

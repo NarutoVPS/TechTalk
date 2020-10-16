@@ -22,10 +22,11 @@ const Feed = ({ postId, replys = [] }) => {
 								<span className="summary">
 									<a>{reply.name}</a>
 								</span>
-								<span>
-									<Interact />
-								</span>
 							</Link>
+
+							<span>
+								<Interact />
+							</span>
 
 							<div className="extra text">
 								{htmlParser(reply.body)}
