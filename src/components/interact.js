@@ -2,14 +2,14 @@ import React from "react";
 
 const Interact = () => {
 	return (
-		<div class="ui ignored icon direction buttons right floated">
+		<div className="ui ignored icon direction buttons right floated">
 			<div
-				class="ui button"
+				className="ui button"
 				data-animation="flip"
 				data-direction="left"
 				title="Flip Left"
 			>
-				<i class="left long arrow icon"></i>
+				<i className="left long arrow icon"></i>
 			</div>
 		</div>
 	);
