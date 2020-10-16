@@ -2,6 +2,8 @@ import React from "react";
 import htmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 
+import Interact from "./interact";
+
 const Feed = ({ postId, replys = [] }) => {
 	if (replys.length == 0) return null;
 
@@ -19,6 +21,9 @@ const Feed = ({ postId, replys = [] }) => {
 							<Link to={"/member/" + reply.email}>
 								<span className="summary">
 									<a>{reply.name}</a>
+								</span>
+								<span>
+									<Interact />
 								</span>
 							</Link>
 
