@@ -48,6 +48,17 @@ body {
 	color: black;
 }
 
+.ui.buttons:not(.basic):not(.inverted) > .button,
+.ui.buttons > .ui.button:not(.basic):not(.inverted) {
+	background: none !important;
+	padding: 0;
+}
+
+.ui.icon.button > .icon,
+.ui.icon.buttons .button > .icon {
+	height: 25px;
+}
+
 .postBody,
 .ui.feed > .event > .content {
 	font-size: 1.18rem;
