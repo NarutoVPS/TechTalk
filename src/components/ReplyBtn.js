@@ -2,6 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const ReplyBtn = ({ index, postId }) => {
+	if (window.localStorage.getItem("UserDetails") == "null") return null;
+
 	return (
 		<div className="ui ignored icon direction buttons right floated">
 			<Link to={`/reply/${postId}/${index}`}>
