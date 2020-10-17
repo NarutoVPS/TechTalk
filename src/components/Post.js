@@ -11,8 +11,10 @@ const Post = (props) => {
 	const [post, setPost] = useState({});
 	const [author, setAuthor] = useState({});
 
+	const postId = props.match.params.id;
+
 	useEffect(() => {
-		getPost(props.match.params.id).then((res) => {
+		getPost(postId).then((res) => {
 			setPost(res);
 			getAuthor(res.authorId).then((res) => setAuthor(res));
 		});
@@ -20,7 +22,7 @@ const Post = (props) => {
 
 	return (
 		<React.Fragment>
-			<Options showReply={true} postId={props.match.params.id} />
+			<Options showReply={true} postId={postId} />
 			<br />
 			<br />
 			<div className="ui segment">
@@ -29,12 +31,13 @@ const Post = (props) => {
 					author={author}
 					datePosted={post.datePosted}
 					topic={post.topic}
+					postId={postId}
 				/>
 				<p className="postBody">{htmlParser(post.body)}</p>
 			</div>
 			{post.reply ? (
 				<div className="ui segment">
-					<Feed postId={props.match.params.id} replys={post.reply} />
+					<Feed postId={postId} replys={post.reply} />
 				</div>
 			) : null}
 		</React.Fragment>

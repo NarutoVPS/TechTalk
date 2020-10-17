@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 import ModifyPost from "./ModifyPost";
 
-const PostHeader = ({ author, title, datePosted, topic }) => {
+const PostHeader = ({ author, title, datePosted, topic, postId }) => {
 	return (
 		<div className="ui divided items">
 			<div className="item">
@@ -31,7 +31,7 @@ const PostHeader = ({ author, title, datePosted, topic }) => {
 						{/* <div className="ui label">
 							<i className="globe icon"></i> Additional Languages
 						</div> */}
-						<ModifyPost />
+						<ModifyPost postId={postId} />
 					</div>
 				</div>
 			</div>
