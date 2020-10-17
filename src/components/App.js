@@ -9,8 +9,6 @@ import About from "./About";
 import Options from "./Options";
 import ReplyEditor from "./ReplyEditor";
 import MemberProfile from "./MemberProfile";
-import PostLike from "./PostLike";
-import CommentReply from "./CommentReply";
 
 import { getTitles } from "../db";
 import NewPost from "./NewPost";
@@ -82,8 +80,6 @@ function App() {
 					component={ReplyEditor}
 				/>
 				<Route path="/member/:email" component={MemberProfile} />
-				<Route path="/like" component={PostLike} />
-				<Route path="/cmt" component={CommentReply} />
 			</BrowserRouter>
 			{/* <Footer /> */}
 			<br />
