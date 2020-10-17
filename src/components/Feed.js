@@ -2,10 +2,11 @@ import React from "react";
 import htmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 
-import Interact from "./interact";
+import ReplyBtn from "./ReplyBtn";
 
 const Feed = ({ postId, replys = [] }) => {
 	if (replys.length == 0) return null;
+	let replyIndex = -1;
 
 	return (
 		<div className="ui feed">
@@ -25,7 +26,10 @@ const Feed = ({ postId, replys = [] }) => {
 							</Link>
 
 							<span>
-								<Interact />
+								<ReplyBtn
+									index={++replyIndex}
+									postId={postId}
+								/>
 							</span>
 
 							<div className="extra text">

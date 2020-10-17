@@ -9,7 +9,8 @@ import About from "./About";
 import Options from "./Options";
 import ReplyEditor from "./ReplyEditor";
 import MemberProfile from "./MemberProfile";
-import PostLike from './PostLike'
+import PostLike from "./PostLike";
+import CommentReply from "./CommentReply";
 
 import { getTitles } from "../db";
 import NewPost from "./NewPost";
@@ -74,10 +75,15 @@ function App() {
 				<Route path="/post/:id" component={Post} />
 				<Route path="/about" component={About} />
 				<Route path="/new" component={NewPost} />
-				<Route path="/reply/:id" component={ReplyEditor} />
+				<Route path="/reply/:id" exact component={ReplyEditor} />
+				<Route
+					path="/reply/:id/:replyIndex"
+					exact
+					component={ReplyEditor}
+				/>
 				<Route path="/member/:email" component={MemberProfile} />
 				<Route path="/like" component={PostLike} />
-
+				<Route path="/cmt" component={CommentReply} />
 			</BrowserRouter>
 			{/* <Footer /> */}
 			<br />

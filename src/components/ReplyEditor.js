@@ -10,6 +10,8 @@ const ReplyEditor = (props) => {
 	const [valid, setValid] = useState(false);
 	const [replyBody, setReplyBody] = useState("");
 
+	const isCommentReply = props.match.params.replyIndex ? true : false;
+
 	const replyDetails = JSON.parse(window.localStorage.getItem("UserDetails"));
 
 	const onChangeHandler = (e, editor) => {
@@ -20,6 +22,10 @@ const ReplyEditor = (props) => {
 
 	const onReplySubmit = () => {
 		replyDetails.body = replyBody;
+		if (isCommentReply) {
+			replyDetails.isCommentReply = true;
+			replyDetails.replyIndex = props.match.params.replyIndex;
+		}
 		addReply(props.match.params.id, replyDetails)
 			.then((res) => {
 				swal("Success", "Reply was posted", "success");
