@@ -5,6 +5,10 @@ import { delPost } from "../db";
 
 const ModifyPost = ({ postId }) => {
 	const onDelBtnClick = () => {
+		if (window.localStorage.getItem("UserDetails") == "null") {
+			swal("Not Authorised", "", "warning");
+			return;
+		}
 		swal({
 			title: "Are you sure?",
 			text: "Once deleted, post can't be recovered!",
@@ -14,7 +18,7 @@ const ModifyPost = ({ postId }) => {
 		}).then((willDelete) => {
 			if (willDelete) {
 				delPost(postId).then(() => {
-					swal("Poof! Your imaginary file has been deleted!", {
+					swal("Poof! Your post has been deleted!", {
 						icon: "success",
 					});
 				});

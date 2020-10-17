@@ -5,6 +5,15 @@ import { Link } from "react-router-dom";
 import ModifyPost from "./ModifyPost";
 
 const PostHeader = ({ author, title, datePosted, topic, postId }) => {
+	const showAuthorControls = () => {
+		if (window.localStorage.getItem("UserDetails") == "null") return null;
+		if (
+			JSON.parse(window.localStorage.getItem("UserDetails")).email ==
+			author.email
+		)
+			return <ModifyPost postId={postId} />;
+		return null;
+	};
 	return (
 		<div className="ui divided items">
 			<div className="item">
@@ -28,10 +37,7 @@ const PostHeader = ({ author, title, datePosted, topic, postId }) => {
 					</div>
 					<div className="extra">
 						<span className="ui label">{topic}</span>
-						{/* <div className="ui label">
-							<i className="globe icon"></i> Additional Languages
-						</div> */}
-						<ModifyPost postId={postId} />
+						{showAuthorControls()}
 					</div>
 				</div>
 			</div>
