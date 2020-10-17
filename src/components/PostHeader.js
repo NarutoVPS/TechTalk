@@ -2,6 +2,8 @@ import React from "react";
 import dayjs from "dayjs";
 import { Link } from "react-router-dom";
 
+import ModifyPost from "./ModifyPost";
+
 const PostHeader = ({ author, title, datePosted, topic }) => {
 	return (
 		<div className="ui divided items">
@@ -25,10 +27,11 @@ const PostHeader = ({ author, title, datePosted, topic }) => {
 						<p></p>
 					</div>
 					<div className="extra">
-						<div className="ui label">{topic}</div>
+						<span className="ui label">{topic}</span>
 						{/* <div className="ui label">
 							<i className="globe icon"></i> Additional Languages
 						</div> */}
+						<ModifyPost />
 					</div>
 				</div>
 			</div>
