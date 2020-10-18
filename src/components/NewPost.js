@@ -23,20 +23,16 @@ const NewPost = () => {
 	const onTitleChangeHandler = (e) => {
 		setTitle(e.target.value.trim());
 
-		// if (title != "" && topic != "") setShowNext(true);
-		// if (e.target.value.trim() == "") setShowNext(false);
+		if (title != "" && topic != "") setShowNext(true);
+		if (e.target.value.trim() == "") setShowNext(false);
 	};
 
 	const onTopicChangeHandler = (e) => {
 		setTopic(e.target.value.trim());
 
-		// if (title != "" && topic != "") setShowNext(true);
-	};
-
-	setInterval(() => {
 		if (title != "" && topic != "") setShowNext(true);
-		else setShowNext(false);
-	}, 100);
+		if (e.target.value.trim() == "") setShowNext(false);
+	};
 
 	const onPostSubmit = () => {
 		addPost(
@@ -65,62 +61,15 @@ const NewPost = () => {
 					/>
 				</div>
 				<div className="field required" onChange={onTopicChangeHandler}>
-					<label>Topic</label>
+					<label>Enter Related Topic : </label>
 					<input
 						type="text"
 						name="topic"
 						placeholder="Enter a Topic"
 						autoComplete="off"
+						required={true}
 					/>
 				</div>
-				{/* <div
-					onChange={onTopicChangeHandler}
-					className="grouped fields required"
-				>
-					<label>Select a Topic</label>
-					<div className="field">
-						<div className="ui radio checkbox">
-							<input
-								type="radio"
-								id="Web Development"
-								name="topic"
-							/>
-							<label>Web Development</label>
-						</div>
-					</div>
-					<div className="field">
-						<div className="ui radio checkbox">
-							<input type="radio" id="Programming" name="topic" />
-							<label>Programming</label>
-						</div>
-					</div>
-					<div className="field">
-						<div className="ui radio checkbox">
-							<input
-								type="radio"
-								id="Machine Learning / AI"
-								name="topic"
-							/>
-							<label>Machine Learning / AI </label>
-						</div>
-					</div>
-					<div className="field">
-						<div className="ui radio checkbox">
-							<input
-								type="radio"
-								id="About this Project (Query / Feedback)"
-								name="topic"
-							/>
-							<label>About this Project (Query / Feedback)</label>
-						</div>
-					</div>
-					<div className="field">
-						<div className="ui radio checkbox">
-							<input type="radio" id="Other" name="topic" />
-							<label>Other</label>
-						</div>
-					</div>
-				</div> */}
 				<button
 					onClick={onClickHandler}
 					type="submit"
