@@ -28,7 +28,7 @@ const NewPost = () => {
 	};
 
 	const onTopicChangeHandler = (e) => {
-		setTopic(e.target.id);
+		setTopic(e.target.value.trim());
 
 		// if (title != "" && topic != "") setShowNext(true);
 	};
@@ -64,7 +64,16 @@ const NewPost = () => {
 						autoComplete="off"
 					/>
 				</div>
-				<div
+				<div className="field required" onChange={onTopicChangeHandler}>
+					<label>Topic</label>
+					<input
+						type="text"
+						name="topic"
+						placeholder="Enter a Topic"
+						autoComplete="off"
+					/>
+				</div>
+				{/* <div
 					onChange={onTopicChangeHandler}
 					className="grouped fields required"
 				>
@@ -111,9 +120,10 @@ const NewPost = () => {
 							<label>Other</label>
 						</div>
 					</div>
-				</div>
+				</div> */}
 				<button
 					onClick={onClickHandler}
+					type="submit"
 					className={`ui primary button ${
 						showNext ? "" : "disabled"
 					}`}

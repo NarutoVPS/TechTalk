@@ -8,23 +8,24 @@ const TopicContainer = (props) => {
 	return (
 		<React.Fragment>
 			<div className="ui segments">
-			<div className="ui segment">
-				<p>{props.topic}</p>
+				<div className="ui segment">
+					<p>{props.topic}</p>
+				</div>
+				<div className="ui secondary segment">
+					{props.titles.map((eachTitle) => {
+						return (
+							<PostTitle
+								id={eachTitle.postid}
+								key={eachTitle.postid}
+								postTitle={eachTitle.title}
+								pic={eachTitle.pic}
+								topic={eachTitle.topic}
+								authorName={eachTitle.authorName}
+							/>
+						);
+					})}
+				</div>
 			</div>
-			<div className="ui secondary segment">
-				{props.titles.map((eachTitle) => {
-					return (
-						<PostTitle
-							id={eachTitle.postid}
-							key={eachTitle.postid}
-							postTitle={eachTitle.title}
-							pic={eachTitle.pic}
-						/>
-					);
-				})}
-			</div>
-			</div>
-
 		</React.Fragment>
 	);
 };

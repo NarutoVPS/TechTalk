@@ -18,13 +18,13 @@ function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [userDetails, setUserDetails] = useState({});
 
-	const topics = [
-		"Web Development",
-		"Programming",
-		"Machine Learning / AI",
-		"About this Project (Query / Feedback)",
-		"Other",
-	];
+	// const topics = [
+	// 	"Web Development",
+	// 	"Programming",
+	// 	"Machine Learning / AI",
+	// 	"About this Project (Query / Feedback)",
+	// 	"Other",
+	// ];
 
 	useEffect(() => {
 		getTitles().then((res) => setTitles(res));
@@ -54,19 +54,12 @@ function App() {
 								showReply={false}
 								isLoggedIn={isLoggedIn}
 							/>
-							{topics.map((topic) => {
-								return (
-									<TopicContainer
-										{...props}
-										key={titles.author}
-										topic={topic} //Name of the topic
-										titles={titles.filter(
-											(eachTitle) =>
-												eachTitle.topic == topic
-										)}
-									/>
-								);
-							})}
+							<TopicContainer
+								{...props}
+								key={titles.author}
+								topic="Recent Posts"
+								titles={titles}
+							/>
 						</React.Fragment>
 					)}
 				/>
