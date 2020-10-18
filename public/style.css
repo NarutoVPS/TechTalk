@@ -37,8 +37,11 @@ body {
 	background-color: rgba(0, 0, 0, 0.1);
 }
 
-.ui.divided.items > .item:last-child {
-	color: white;
+.ui.unstackable.divided.items:hover {
+	border-radius: 5px;
+	padding: 4px;
+	background-color: rgba(0, 0, 0, 0.2);
+	transition: 0.2s all ease-in;
 }
 
 /* Post & Reply */
