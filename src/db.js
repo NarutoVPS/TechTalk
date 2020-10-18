@@ -8,6 +8,7 @@ export const getTitles = () => {
 
 	return new Promise((resolve, reject) => {
 		db.collection("Titles")
+			.orderBy("createdAt", "desc")
 			.get()
 			.then((snapshot) => {
 				snapshot.docs.map((doc) => {
@@ -59,6 +60,8 @@ export const addPost = (
 						topic,
 						pic,
 						author: authorId,
+						authorName,
+						createdAt: firebase.firestore.FieldValue.serverTimestamp(),
 					})
 					.then(() => resolve("Success"));
 			})
