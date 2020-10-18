@@ -57,8 +57,20 @@ function App() {
 							<TopicContainer
 								{...props}
 								key={titles.author}
+								topic="About This Project"
+								titles={titles.filter(
+									(title) =>
+										title.topic == "About This Project"
+								)}
+							/>
+							<TopicContainer
+								{...props}
+								key={titles.author}
 								topic="Recent Posts"
-								titles={titles}
+								titles={titles.filter(
+									(title) =>
+										title.topic != "About This Project"
+								)}
 							/>
 						</React.Fragment>
 					)}

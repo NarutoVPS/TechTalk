@@ -10,7 +10,7 @@ const PostTitle = (props) => {
 						<img src={props.pic} />
 					</div>
 					<div className="content">
-						<a className="header">{props.postTitle}</a>
+						<span className="header">{props.postTitle}</span>
 						<div className="meta">
 							<span>{props.authorName}</span>
 						</div>

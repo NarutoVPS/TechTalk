@@ -86,11 +86,6 @@ const Header = (props) => {
 				onClick={onClickHandler}
 				className="ui top fixed menu inverted"
 			>
-				{/* <Link to="/">
-					<div className="item">
-						<img src="./icon.svg" />
-					</div>
-				</Link> */}
 				<a
 					className="item"
 					href="https://github.com/NarutoVPS/TechTalk"
