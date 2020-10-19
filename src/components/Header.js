@@ -82,10 +82,7 @@ const Header = (props) => {
 
 	return (
 		<React.Fragment>
-			<div
-				onClick={onClickHandler}
-				className="ui top fixed menu inverted"
-			>
+			<div onClick={onClickHandler} className="ui top fixed menu">
 				<a
 					className="item"
 					href="https://github.com/NarutoVPS/TechTalk"
@@ -98,13 +95,13 @@ const Header = (props) => {
 				>
 					Home
 				</Link>
-				{/* <Link
-					to="/about"
-					className={`item ${activeTab == "/about" ? "active" : ""}`}
-					data-tab="About"
+				<Link
+					to="/info"
+					className={`item ${activeTab == "/info" ? "active" : ""}`}
+					data-tab="Info"
 				>
-					About
-				</Link> */}
+					Info
+				</Link>
 				<div className="item right floated">
 					{displaySignInStatus()}
 				</div>

@@ -5,7 +5,7 @@ import Header from "./Header";
 import Footer from "./Footer";
 import TopicContainer from "./TopicContainer";
 import Post from "./Post";
-import About from "./About";
+import Info from "./Info";
 import Options from "./Options";
 import ReplyEditor from "./ReplyEditor";
 import MemberProfile from "./MemberProfile";
@@ -76,7 +76,7 @@ function App() {
 					)}
 				/>
 				<Route path="/post/:id" component={Post} />
-				<Route path="/about" component={About} />
+				<Route path="/info" component={Info} />
 				<Route path="/new" component={NewPost} />
 				<Route path="/reply/:id" exact component={ReplyEditor} />
 				<Route

@@ -1,7 +1,7 @@
 import React from "react";
 
-const About = () => {
+const Info = () => {
 	return <h1>Nothing to see here right now. 😅</h1>;
 };
 
-export default About;
+export default Info;
