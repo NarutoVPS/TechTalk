@@ -33,12 +33,10 @@ const Feed = ({ postId, replys = [] }) => {
 										postId={postId}
 									/>
 								</span>
-								<div className="extra text">
-									{htmlParser(reply.body)}
-								</div>
+								<div>{htmlParser(reply.body)}</div>
 
 								<div className="repliedTo">
-									<div className="content">
+									<div>
 										<Link to={"/member/" + reply.email}>
 											<span className="summary">
 												<a>{replys[index].name}</a>
