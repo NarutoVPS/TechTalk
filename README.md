@@ -1,3 +1,5 @@
+![](gifs/cropped-min.gif)
+
 # TechTalk [(Live Demo)](https://narutovps-techtalk.herokuapp.com/)
 
 > Online discussion forum built with React & Firestore.
@@ -15,6 +17,8 @@
 -   Reply to Posts & other users comments
 -   User Profile
 -   Super easy to use
+
+![](gifs/replyDemo-min.gif)
 
 ## How To Use
 
