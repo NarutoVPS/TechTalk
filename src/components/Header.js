@@ -50,7 +50,7 @@ const Header = (props) => {
 							onClick={renderProps.onClick}
 							disabled={renderProps.disabled}
 						>
-							Sign In with Google
+							Sign In
 						</button>
 					)}
 					buttonText="Login"
@@ -83,28 +83,22 @@ const Header = (props) => {
 	return (
 		<React.Fragment>
 			<div onClick={onClickHandler} className="ui top fixed menu">
+				<Link
+					to="/"
+					className={`item ${activeTab == "/" ? "active" : ""}`}
+				>
+					<img src="./icon.svg" />
+				</Link>
+
+				<div className="item right floated">
+					{displaySignInStatus()}
+				</div>
 				<a
 					className="item"
 					href="https://github.com/NarutoVPS/TechTalk"
 				>
 					<img src="./github.svg" />
 				</a>
-				<Link
-					to="/"
-					className={`item ${activeTab == "/" ? "active" : ""}`}
-				>
-					Home
-				</Link>
-				<Link
-					to="/info"
-					className={`item ${activeTab == "/info" ? "active" : ""}`}
-					data-tab="Info"
-				>
-					Info
-				</Link>
-				<div className="item right floated">
-					{displaySignInStatus()}
-				</div>
 			</div>
 			<br />
 			<br />
