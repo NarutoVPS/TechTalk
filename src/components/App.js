@@ -18,14 +18,6 @@ function App() {
 	const [isLoggedIn, setIsLoggedIn] = useState(false);
 	const [userDetails, setUserDetails] = useState({});
 
-	// const topics = [
-	// 	"Web Development",
-	// 	"Programming",
-	// 	"Machine Learning / AI",
-	// 	"About this Project (Query / Feedback)",
-	// 	"Other",
-	// ];
-
 	useEffect(() => {
 		getTitles().then((res) => setTitles(res));
 	}, []);
